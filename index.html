@@ -78,17 +78,13 @@
 				</section>
 
 				<section>
-					<p>Common problems</p>
+					<h3>Common problems</h3>
 					<ul>
-						<li>Conflicts in the global object.</li>
-						<li>Order of loading is important.</li>
-						<li>Developers have to resolve dependencies of modules/libraries.</li>
-						<li>In big projects the list can get really long and difficult to manage.</li>
+						<li class="fragment">Conflicts in the global object.</li>
+						<li class="fragment">Order of loading is important.</li>
+						<li class="fragment">Developers have to resolve dependencies of modules/libraries.</li>
+						<li class="fragment">In big projects the list can get really long and difficult to manage.</li>
 					</ul>
-				</section>
-
-				<section>
-					<p>With Webpack this is great because it means we can explicitly define which dependencies each module needs and then an optimized bundle will be created with no more and no less than exactly what is needed.</p>
 				</section>
 
 				<section>
@@ -103,9 +99,7 @@ Pinkyfier.prototype.pink = function () {
 	this.element.style.color = "hotpink";
 }
 						</code></pre>
-				</section>
 
-				<section>
 					<h3>js/Fattyfier.js</h3>
 					<pre><code class="hljs" data-trim contenteditable>
 function Fattyfier(id) {
@@ -211,16 +205,7 @@ document.getElementById("fat").onclick = function () {
 				</section>
 
 				<section>
-					<ul>
-						<li>You know browserify, RequireJS or something similar</li>
-						<li>You see the value in:
-							<ul>
-								<li>Bundle splitting</li>
-								<li>Async loading</li>
-								<li>Packaging static assets like images and CSS</li>
-							</ul>
-						</li>
-					</ul>
+					<p>With Webpack this is great because it means we can explicitly define which dependencies each module needs and then an optimized bundle will be created with no more and no less than exactly what is needed.</p>
 				</section>
 
 				<section>
@@ -277,6 +262,19 @@ loaders: [
 				</section>
 
 				<section>
+					<p>preLoaders</p>
+					<pre><code class="hljs" data-trim contenteditable>
+preLoaders: [
+    {
+        test: /\.(es6|js)$/,
+        exclude: /node_modules/,
+        loaders: ['eslint']
+    }
+]
+					</code></pre>
+				</section>
+
+				<section>
 					<h2>Why webpack?</h2>
 					<section>
 						<p>It's like browserify but can split your app into multiple files. If you have multiple pages in a single-page app, the user only downloads code for just that page. If they go to another page, they don't redownload common code.</p>
@@ -287,6 +285,22 @@ loaders: [
 					<section>
 						<p>It supports AMD and CommonJS, among other module systems (Angular, ES6). If you don't know what to use, use CommonJS.</p>
 					</section>
+					<section>
+						<ul>
+							<li>Bundle splitting</li>
+							<li>Async loading</li>
+							<li>Packaging static assets like images and CSS</li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<h2>some more amazing things</h2>
+					<ul>
+						<li>Code Splitting</li>
+						<li>Webpack dev server</li>
+						<li>Hot Module Replacement</li>
+					</ul>
 				</section>
 
 				<section>
