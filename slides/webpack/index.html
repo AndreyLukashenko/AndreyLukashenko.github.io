@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js – The HTML Presentation Framework</title>
+		<title>Webpack</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -209,19 +209,6 @@ document.getElementById("fat").onclick = function () {
 				</section>
 
 				<section>
-					<p>Plugins</p>
-					<pre><code class="hljs" data-trim contenteditable>
-plugins: [
-  new webpack.optimize.UglifyJsPlugin({
-    compress: {
-      warnings: false
-    }
-  })
-]
-					</code></pre>
-				</section>
-
-				<section>
 					<p>Sourcemaps</p>
 					<pre><code class="hljs" data-trim contenteditable>
 devtool: 'source-map'
@@ -237,7 +224,28 @@ resolve: {
 				</section>
 
 				<section>
-					<p>One great feature of webpack is the concept of loaders which can transform static assets (or anything really) into something that is automatically bundled and usable by your application. Using loaders you can bundle CSS and handlebar templates, or in our case, transform TypeScript into JavaScript.</p>
+					<p>Plugins</p>
+					<pre><code class="hljs" data-trim contenteditable>
+plugins: [
+  new webpack.optimize.UglifyJsPlugin({
+	compress: {
+	  warnings: false
+	}
+  }),
+
+  new webpack.ProvidePlugin({
+	$: "jquery",
+	jQuery: "jquery",
+	"window.jQuery": "jquery"
+  }),
+
+  new WebpackNotifierPlugin(),
+]
+					</code></pre>
+				</section>
+
+				<section>
+					<p>One great feature of webpack is the concept of loaders which can transform static assets (or anything really) into something that is automatically bundled and usable by your application.</p>
 				</section>
 
 				<section>
